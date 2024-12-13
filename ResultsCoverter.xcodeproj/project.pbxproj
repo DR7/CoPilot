@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C0AB0FE52D0CE93500C11036 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB0FE42D0CE93500C11036 /* Metal.framework */; };
+		C0AB0FE92D0CEBB500C11036 /* MyShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = C0AB0FE82D0CEBB500C11036 /* MyShader.metal */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C0AB0FC52D0CC53700C11036 /* ResultsCoverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResultsCoverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0AB0FE42D0CE93500C11036 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		C0AB0FE82D0CEBB500C11036 /* MyShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShader.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AB0FE52D0CE93500C11036 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +40,9 @@
 		C0AB0FBC2D0CC53700C11036 = {
 			isa = PBXGroup;
 			children = (
+				C0AB0FE72D0CEB6D00C11036 /* Shaders */,
 				C0AB0FC72D0CC53700C11036 /* ResultsCoverter */,
+				C0AB0FE32D0CE93500C11036 /* Frameworks */,
 				C0AB0FC62D0CC53700C11036 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +55,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C0AB0FE32D0CE93500C11036 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB0FE42D0CE93500C11036 /* Metal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0AB0FE72D0CEB6D00C11036 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB0FE82D0CEBB500C11036 /* MyShader.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -55,6 +81,7 @@
 				C0AB0FC12D0CC53700C11036 /* Sources */,
 				C0AB0FC22D0CC53700C11036 /* Frameworks */,
 				C0AB0FC32D0CC53700C11036 /* Resources */,
+				C0AB0FE62D0CEA0D00C11036 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -114,11 +141,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C0AB0FE62D0CEA0D00C11036 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a scrip# Compile Metal shaders\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metal -c ${SRCROOT}/path/to/shader.metal -o ${BUILT_PRODUCTS_DIR}/default.air\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metallib ${BUILT_PRODUCTS_DIR}/default.air -o ${BUILT_PRODUCTS_DIR}/default.metallibt or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0AB0FC12D0CC53700C11036 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AB0FE92D0CEBB500C11036 /* MyShader.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
